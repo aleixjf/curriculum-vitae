@@ -309,8 +309,12 @@ Most of the code. Wrapping and constraining elements.
 }
 
 /*------------------------------------*\
-  #Timeline Event
+  #Footer
 \*------------------------------------*/
+
+.copyright {
+  color: $footer-color;
+}
 
 .social-media {
   display: flex;
@@ -322,6 +326,7 @@ Most of the code. Wrapping and constraining elements.
   .social-media-icon {
     margin-left: 0.5rem;
     margin-right: 0.5rem;
+    color: $footer-color;
   }
 }
 
