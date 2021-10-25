@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+
+<html lang="es">
+  <!-- Web information -->
+  <head>
+    <title>UOC Boilerplate</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link rel="stylesheet" type="text/css" href="./assets/styles/main.scss" />
+  </head>
+
+  <!-- Web content -->
+  <body data-spy="scroll" data-target="#menu" data-offset="50">
+    <div class="landing">
+      <div class="centered">
+        <h1 class="landing-name">Aleix Jiménez Ferrer</h1>
+        <p class="landing-description">Desarrollador Full Stack</p>
+      </div>
+    </div>
+
+    <!-- Header + Navigation bar (Mobile ONLY)-->
+    <header class="mobile-header mobile-only">
+      <!--
+      <picture class="logo">
+        <source
+          srcset="./assets/images/logo.png?as=webp&width=350"
+          type="image/webp"
+        />
+        <img src="assets/images/AJ.svg" alt="Aleix Jiménez's logo" />
+      </picture>
+      -->
+      <a href="#">
+        <svg class="icon" id="logo" viewBox="0 0 1000 1000">
+          <g id="AJ">
+            <path
+              class="cls-1"
+              d="M453.4,93.2,848.52,910.42h-607L198.17,1000H1000L500,0Z"
+              transform="translate(0 0)"
+            />
+            <path
+              class="cls-1"
+              d="M108.08,1000C130.15,954.36,356.77,485.76,455,282.64l-47.35-97.93L0,1000Z"
+              transform="translate(0 0)"
+            />
+          </g>
+          <polygon
+            id="Inner_Triangle"
+            data-name="Inner Triangle"
+            class="cls-1"
+            points="499.99 376.13 722.6 836.54 277.38 836.54 499.99 376.13"
+          />
+        </svg>
+      </a>
+
+      <svg
+        class="icon"
+        id="menu-icon"
+        viewBox="0 0 100 100"
+        onclick="toggleMenu()"
+      >
+        <path
+          class="menu-icon-line top-line"
+          d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058"
+        />
+        <path class="menu-icon-line mid-line" d="M 20,50 H 80" />
+        <path
+          class="menu-icon-line bottom-line"
+          d="M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942"
+        />
+      </svg>
+    </header>
+
+    <nav class="navigation" id="menu">
+      <ul>
+        <li><a href="#profile">Perfil</a></li>
+        <li><a href="#academic">Formación Académica</a></li>
+        <li><a href="#experience">Experiencia Profesional</a></li>
+        <!-- <li><a href="#projects">Proyectos</a></li> -->
+        <li><a href="#skills">Competencias técnicas</a></li>
+        <li><a href="#languages">Idiomas</a></li>
+        <!-- <li><a href="#contact">Contacto</a></li> -->
+      </ul>
+    </nav>
+
+    <!-- Main content of the current webpage -->
+    <main role="main">
+      <article>
+        <section id="profile" class="cv-section">
+          <h2>Perfil</h2>
+          <p>Desarrollador full stack</p>
+          <p>
+            Soy un ingeniero y desarrollador proactivo que tiene como objetivo
+            crecer profesionalmente mediante la adquisición de conocimientos y
+            la experiencia que ofrece el mundo laboral. Mis ganas de contribuir
+            y de desarrollar tanto mis competencias técnicas como personales
+            hacen que sea un valor añadido para la contribución al éxito de un
+            proyecto profesional.
+          </p>
+        </section>
+
+        <section id="academic" class="cv-section">
+          <h2>Formación académica</h2>
+
+          <section class="timeline-event">
+            <h3 class="timeline-title">
+              Máster en Desarrollo Web y de Aplicaciones
+            </h3>
+            <div class="timeline-event-information flex-container">
+              <div class="timeline-event-panel">
+                <p class="timeline-duration">
+                  <time datetime="2020-09">Septiembre 2020</time> – Actualidad
+                </p>
+                <p class="timeline-company">
+                  Universitat Oberta de Catalunya (UOC)
+                </p>
+              </div>
+              <div class="timeline-event-description">
+                <p class="timeline-tasks">
+                  Descripción de las principales asignaturas que interesan del
+                  plan de estudios.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section class="timeline-event">
+            <h3 class="timeline-title">Grado en Ingeniería Química</h3>
+            <div class="timeline-event-information flex-container">
+              <div class="timeline-event-panel">
+                <p class="timeline-duration">
+                  <time datetime="2014-09">Septiembre 2014</time> –
+                  <time datetime="2019-03">Marzo 2019</time>
+                </p>
+                <p class="timeline-company">
+                  Universitat Politècnica de Catalunya (UPC)
+                </p>
+              </div>
+              <div class="timeline-event-description">
+                <p class="timeline-tasks">
+                  Descripción de las principales asignaturas que interesan del
+                  plan de estudios.
+                </p>
+              </div>
+            </div>
+          </section>
+        </section>
+
+        <section id="experience" class="cv-section">
+          <h2>Experiencia profesional</h2>
+
+          <section class="timeline-event">
+            <h3 class="timeline-title">Desarrollador QML</h3>
+            <div class="timeline-event-information flex-container">
+              <div class="timeline-event-panel">
+                <p class="timeline-duration">
+                  <time datetime="2020-01">Enero 2020</time> – Actualidad
+                </p>
+                <p class="timeline-company">Autónomo</p>
+              </div>
+              <div class="timeline-event-description">
+                <p class="timeline-tasks">
+                  Desarrollo de código QML para mejorar/actualizar la
+                  integración de las controladoras DJ de Native Instruments
+                  (Traktor Kontrol S5, S8, D2 y S4 MK3) con el software de la
+                  empresa, Traktor PRO.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section class="timeline-event">
+            <h3 class="timeline-title">Desarrollador QML</h3>
+            <div class="timeline-event-information flex-container">
+              <div class="timeline-event-panel">
+                <p class="timeline-duration">
+                  <time datetime="2021-02">Febrero 2021</time> –
+                  <time datetime="2021-06">Junio 2021</time>
+                </p>
+                <p class="timeline-company">Native Instruments | Autónomo</p>
+              </div>
+              <div class="timeline-event-description">
+                <p class="timeline-tasks">
+                  Desarrollo de código QML siguiendo la metodología de trabajo
+                  agile para la integración del hardware CDJ-3000 de Pioneer en
+                  el software para DJs de la empresa, Traktor PRO.
+                </p>
+                <p class="timeline-contact">
+                  Contacto de referencia: Friedemann Becker
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section class="timeline-event">
+            <h3 class="timeline-title">Consultor técnico</h3>
+            <div class="timeline-event-information flex-container">
+              <div class="timeline-event-panel">
+                <p class="timeline-duration">
+                  <time datetime="2019-09">Septiembre 2019</time> –
+                  <time datetime="2019-12">Diciembre 2019</time>
+                </p>
+                <p class="timeline-company">FI Group</p>
+              </div>
+              <div class="timeline-event-description">
+                <p class="timeline-tasks">
+                  Consultor técnico de proyectos de I+D+i especializado en
+                  ayudas nacionales y deducciones fiscales.
+                </p>
+                <p class="timeline-contact">
+                  Contacto de referencia: Elena Bayà Isard
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section class="timeline-event">
+            <h3 class="timeline-title">Químico analista</h3>
+            <div class="timeline-event-information flex-container">
+              <div class="timeline-event-panel">
+                <p class="timeline-duration">
+                  <time datetime="2019-07">Julio 2019</time> –
+                  <time datetime="2019-09">Septiembre 2019</time>
+                </p>
+                <p class="timeline-company">Aigües de Barcelona</p>
+              </div>
+              <div class="timeline-event-description">
+                <p class="timeline-tasks">
+                  Realización de funciones de químico analista en laboratorio
+                  para el análisis fisicoquímico de aguas potables
+                </p>
+                <p class="timeline-contact">
+                  Contacto de referencia: Raquel Cardeñoso García
+                </p>
+              </div>
+            </div>
+          </section>
+        </section>
+
+        <!--
+        <section id="projects" class="cv-section">
+          <h2>Proyectos</h2>
+        </section>
+        -->
+
+        <section id="skills" class="cv-section">
+          <h2>Competencias técnicas</h2>
+
+          <div class="flex-container">
+            <div class="two-columns">
+              <section>
+                <h3>Lenguages de programación</h3>
+                <ul>
+                  <li>HTML(5)</li>
+                  <li>CSS(3)</li>
+                  <li>JavaScript</li>
+                  <li>TypeScript</li>
+                  <li>MySQL</li>
+                  <li>PHP</li>
+                  <li>Python</li>
+                  <li>Rust</li>
+                  <li>C++</li>
+                  <li>QML</li>
+                  <li>VisualBasic</li>
+                </ul>
+              </section>
+
+              <section>
+                <h3>Metodologías de trabajo</h3>
+                <ul>
+                  <li>Programació orientada a objetos (POO)</li>
+                  <li>MVC Pattern</li>
+                  <li>git</li>
+                </ul>
+              </section>
+            </div>
+
+            <div class="two-columns">
+              <section>
+                <h3>Frameworks</h3>
+                <ul>
+                  <li>Angular</li>
+                  <li>Laravel</li>
+                  <li>CodeIgniter</li>
+                  <li>Flask</li>
+                </ul>
+              </section>
+
+              <section>
+                <h3>Softwares</h3>
+                <ul>
+                  <li>Visual Studio Code</li>
+                  <li>QtCreator</li>
+                  <li>Xcode</li>
+
+                  <li>Microsoft Office</li>
+                  <li>Adobe XD</li>
+                  <li>Adobe Illustrator</li>
+                </ul>
+              </section>
+            </div>
+          </div>
+        </section>
+
+        <section id="languages" class="cv-section">
+          <h2>Idiomas</h2>
+
+          <table>
+            <tr>
+              <th>Language</th>
+              <th>Level</th>
+            </tr>
+            <tr>
+              <td>Catalan</td>
+              <td>
+                <span class="rating five-stars"></span
+                ><span class="level">Nativo</span>
+              </td>
+            </tr>
+            <tr>
+              <td>Spanish</td>
+              <td>
+                <span class="rating five-stars"></span
+                ><span class="level">Nativo</span>
+              </td>
+            </tr>
+            <tr>
+              <td>English</td>
+              <td>
+                <span class="rating five-stars"></span
+                ><span class="level">Muy alto</span>
+              </td>
+            </tr>
+            <tr>
+              <td>French</td>
+              <td>
+                <span class="rating five-stars"></span
+                ><span class="level">Medio</span>
+              </td>
+            </tr>
+          </table>
+
+          <section class="certificates">
+            <h3>Diplomas y certificados</h3>
+            <ul>
+              <li>
+                Certificate of Proficiency in English C2 (CPE)
+                <p><time datetime="2019-07">Julio 2019</time></p>
+                <p>University of Cambridge</p>
+              </li>
+              <li>
+                Diplôme d'études en langue française B2 (DELF)
+                <p><time datetime="2013-04">Abril 2013</time></p>
+                <p>University of Cambridge</p>
+              </li>
+            </ul>
+          </section>
+        </section>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <div class="social-media">
+        <a href="https://github.com/aleixjf"><i class="fab fa-github"></i></a>
+        <a href="https://es.linkedin.com/in/aleixjimenez"
+          ><i class="fab fa-linkedin"></i
+        ></a>
+        <a href="mailto:aleixjf@gmail.com"><i class="fas fa-envelope"></i></a>
+        <a href="tel:+34691734533"><i class="fas fa-mobile-alt"></i></a>
+        <a href="sms:+34691734533"><i class="fas fa-sms"></i></a>
+        <!-- you can add a default message adding the text after the number, just like this: number&body=urlencodedtext-->
+        <a href="https://wa.me/34691734533"><i class="fab fa-whatsapp"></i></a>
+        <!-- you can add a default message adding the text after the number, just like this: number/?text=urlencodedtext-->
+      </div>
+      <p class="copyright">
+        <time datetime="2021">2021</time> © Aleix Jiménez
+        <!-- <a href="https://es.linkedin.com/in/aleixjimenez">Aleix Jiménez</a> -->
+      </p>
+      <p>All rights reserved.</p>
+    </footer>
+
+    <!-- Necessary scripts for the webpage to work properly -->
+    <scrip src=""></scrip>
+    <script type="module" src="./assets/scripts/main.js"></script>
+    <script src="./assets/scripts/menu-overlay.js"></script>
+    <script src="./assets/scripts/intersection-observer.js"></script>
+  </body>
+</html>

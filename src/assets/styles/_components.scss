@@ -1,0 +1,359 @@
+/*
+6. COMPONENTS:
+
+Designed components, chunks of UI.
+For example: specific UI components.
+Most of the code. Wrapping and constraining elements.
+*/
+
+/*------------------------------------*\
+  #LANDING PAGE
+\*------------------------------------*/
+
+.landing {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(
+    0deg,
+    $landing-bg-bottom-color 5%,
+    $landing-bg-top-color 60%
+  );
+
+  /*
+  @media screen and (min-width: $phoneWidth) {
+    background: $bg-color;
+  }
+  */
+
+  .landing-name {
+    font-size: 6vw;
+    color: $landing-color;
+  }
+
+  .landing-description {
+    font-size: 2.5vw;
+    color: $landing-color;
+  }
+}
+
+/*------------------------------------*\
+  #MOBILE HEADER
+\*------------------------------------*/
+
+.mobile-header {
+  display: flex;
+  height: $mobile-header-height;
+  flex-direction: row;
+  align-items: center; /* Align items on the vertical center */
+  justify-content: space-between;
+  padding-left: 5%;
+  padding-right: 5%;
+  background-color: $header-bg-color;
+  position: sticky;
+  top: 0;
+  //left: 0;
+  overflow-x: hidden; /* Disable horizontal scroll */
+  z-index: 1;
+
+  .icon {
+    width: $mobile-header-height * 0.7;
+    fill: $header-color;
+  }
+
+  #menu-icon {
+    width: $mobile-header-height; //the animation makes the real menu lines be smaller than the actual height/width of the svg
+    background-color: transparent;
+
+    .menu-icon-line {
+      fill: none;
+      stroke: $header-color;
+      stroke-width: 3;
+      transition: stroke-dasharray $menu-transition,
+        stroke-dashoffset $menu-transition;
+    }
+
+    .top-line,
+    .bottom-line {
+      stroke-dasharray: 60 207;
+    }
+    .mid-line {
+      stroke-dasharray: 60 60;
+    }
+
+    &.expanded {
+      .top-line,
+      .bottom-line {
+        stroke-dasharray: 90 207;
+        stroke-dashoffset: -134;
+      }
+      .mid-line {
+        stroke-dasharray: 1 60;
+        stroke-dashoffset: -30;
+      }
+    }
+  }
+}
+
+/*------------------------------------*\
+  #MENU OVERLAY
+\*------------------------------------*/
+
+#menu {
+  height: auto;
+  max-height: 0;
+  width: 100%;
+  position: absolute;
+  top: calc(100vh + $mobile-header-height);
+  /*
+  We can't use position: "sticky" because it moves
+  the content below it when it's in mobile mode,
+  and it ctreates a white space when in desktop mode.
+
+  We will place it with position: "absolute", 
+  so that it's sticked on a certain position,
+  and with JavaScript, we will listen to the scroll event
+  to change it to fixed when scrollY>vertical y position.
+  */
+  background-color: $menu-bg-color;
+  overflow: hidden;
+  z-index: 1;
+  margin: 0;
+  padding: 0;
+  transition: max-height $menu-transition; //animation on height with height: (min/max/fit)-content or auto or similar "auto" values aren't working
+
+  &.expanded {
+    max-height: calc(100vh - $mobile-header-height);
+  }
+
+  &.sticky {
+    position: fixed;
+    top: $mobile-header-height;
+
+    @media screen and (min-width: $phoneWidth) {
+      top: $desktop-overlay-offset; //right offset, so that it looks "simetric" vs the top right corner
+    }
+  }
+
+  @media screen and (min-width: $phoneWidth) {
+    width: 15vw;
+    max-height: calc(100vh - $mobile-header-height);
+    top: calc(
+      100% + $desktop-overlay-offset
+    ); //100% + right offset, so that it looks "simetric" vs the top right corner
+    right: $desktop-overlay-offset;
+    z-index: 1;
+    background: $mid;
+    overflow-x: hidden;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  li {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    line-height: 2;
+
+    @media screen and (min-width: $phoneWidth) {
+      line-height: 1.2;
+      margin: 0;
+    }
+  }
+  a {
+    margin-left: 5%;
+    margin-right: 5%;
+
+    text-decoration: none;
+    color: $header-color;
+
+    @media screen and (min-width: $phoneWidth) {
+      display: block;
+      //height: 100%;
+      //width: 100%;
+      margin: 0;
+      padding-left: 5%;
+      padding-right: 5%;
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+
+    //&:active,
+    &.active {
+      font-weight: 700;
+
+      @media screen and (min-width: $phoneWidth) {
+        background-color: $dark;
+      }
+    }
+  }
+}
+
+/*------------------------------------*\
+  #DESKTOP SIDE MENU
+\*------------------------------------*/
+
+/*
+#desktop-menu {
+  width: 15vw;
+  position: sticky;
+  z-index: 1;
+  float: right;
+  top: 4vw;
+  right: 4vw;
+  background: $mid;
+  overflow-x: hidden;
+  padding: 8px 0;
+
+  ul {
+    margin: 5%;
+    padding: 0;
+    list-style: none;
+  }
+  li {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+  a {
+    text-decoration: none;
+    color: $header-color;
+
+    &.active,
+    &:active {
+      font-weight: 700;
+    }
+  }
+}
+*/
+
+/*------------------------------------*\
+  #CV Sections
+\*------------------------------------*/
+
+.cv-section {
+  padding-top: 25px;
+  padding-bottom: 25px;
+  padding-left: 5%;
+  padding-right: 5%;
+
+  @media screen and (min-width: $tabletWidth) {
+    padding-left: 20%;
+    padding-right: 20%;
+  }
+
+  @media screen and (min-width: $smallScreenWidth) {
+    padding-left: 30%;
+    padding-right: 30%;
+  }
+
+  &:nth-child(odd):not(:last-child) {
+    background-color: $bg-color;
+  }
+  &:nth-child(even) {
+    background-color: $bg-lighter-color;
+  }
+
+  /* Gradient backgrounds */
+  /*
+  &:nth-child(odd):not(:last-child) {
+    background: linear-gradient(0deg, $bg-lighter-color 0%, $bg-color 10%);
+  }
+  &:nth-child(even):not(:last-child) {
+    background: linear-gradient(0deg, $bg-color 0%, $bg-lighter-color 10%);
+  }
+  &:nth-child(odd):last-child {
+    background: linear-gradient(0deg, $footer-bg-color 0%, $bg-color 10%);
+  }
+  &:nth-child(even):last-child {
+    background: linear-gradient(0deg, $footer-bg-color 0%, $bg-lighter-color 10%);
+  }
+  */
+}
+
+/*------------------------------------*\
+  #Timeline Event
+\*------------------------------------*/
+
+.timeline-title {
+  margin-left: 0%;
+
+  /*
+  @media screen and (min-width: $phoneWidth) {
+    margin-left: 40%;
+  }
+  */
+}
+
+.timeline-event-information {
+  justify-content: space-between;
+}
+
+.timeline-event-panel {
+  width: 100%;
+
+  @media screen and (min-width: $phoneWidth) {
+    width: 35%;
+  }
+}
+.timeline-event-description {
+  width: 100%;
+
+  @media screen and (min-width: $phoneWidth) {
+    width: 55%;
+  }
+}
+
+/*------------------------------------*\
+  #Timeline Event
+\*------------------------------------*/
+
+.social-media {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+
+  & > a {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
+}
+
+.rounded-social-buttons .social-button {
+  width: 3rem;
+  height: 3rem;
+  clip-path: circle(50%);
+  /*
+clip-path: url(#facebook);
+background-color: white;
+*/
+}
+
+.facebook {
+  fill: whitesmoke;
+
+  &:hover {
+    fill: #3b5998;
+  }
+}
+
+/*
+The Components layer is where we begin to style
+recognisable pieces of UI. We're still binding
+onto classes here, so our specificity hasn't yet
+increased. However, this layer is more explicit
+than the last one in that we are now styling explicit,
+designed pieces of the DOM.
+
+We shouldn't find any selectors with a
+lower specificity than one class in this layer.
+This is where the majority of your work will happen
+after initial project set-up. Adding new components and
+features usually makes up the vast majority of development.
+*/

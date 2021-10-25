@@ -1,0 +1,54 @@
+/*
+3. GENERIC:
+
+Ground Zero stylesGround Zero styles --> CSS Resets, normalizations, global box-sizing rules, etc.
+
+The Generic layer is the first one that
+actually produces any CSS. It houses very high-level,
+far reaching styles. This layer is seldom modified,
+and is usually the same across any projects you work on.
+It contains things like Normalize.css, global box-sizing rules,
+CSS resets and so on. The Generic layer affects a lot of the DOM,
+hence it being nice and wide in the Triangle model, and
+occurring very early on.
+*/
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-width: 100vw;
+  min-height: 100vh;
+  margin: 0;
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+  color: $text-color;
+  background-color: $bg-color;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  overflow: hidden;
+}
+
+/*
+main {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+}
+*/
+
+footer {
+  margin-top: auto;
+  text-align: center;
+  background-color: $footer-bg-color;
+  color: $footer-color;
+
+  p,
+  a {
+    color: $footer-color;
+  }
+}
