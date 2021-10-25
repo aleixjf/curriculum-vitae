@@ -44,19 +44,19 @@ Most of the code. Wrapping and constraining elements.
 \*------------------------------------*/
 
 .mobile-header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 1;
   display: flex;
-  height: $mobile-header-height;
   flex-direction: row;
   align-items: center; /* Align items on the vertical center */
   justify-content: space-between;
+  height: $mobile-header-height;
   padding-left: 5%;
   padding-right: 5%;
-  background-color: $header-bg-color;
-  position: sticky;
-  top: 0;
-  //left: 0;
   overflow-x: hidden; /* Disable horizontal scroll */
-  z-index: 1;
+  background-color: $header-bg-color;
 
   .icon {
     width: $mobile-header-height * 0.7;
@@ -69,11 +69,11 @@ Most of the code. Wrapping and constraining elements.
 
     .menu-icon-line {
       fill: none;
-      stroke: $header-color;
       stroke-width: 3;
+      stroke: $header-color;
       transition: stroke-dasharray $menu-transition,
         stroke-dashoffset $menu-transition;
-    }
+      }
 
     .top-line,
     .bottom-line {
@@ -102,11 +102,7 @@ Most of the code. Wrapping and constraining elements.
 \*------------------------------------*/
 
 #menu {
-  height: auto;
-  max-height: 0;
-  width: 100%;
   position: absolute;
-  top: calc(100vh + $mobile-header-height);
   /*
   We can't use position: "sticky" because it moves
   the content below it when it's in mobile mode,
@@ -117,11 +113,15 @@ Most of the code. Wrapping and constraining elements.
   and with JavaScript, we will listen to the scroll event
   to change it to fixed when scrollY>vertical y position.
   */
-  background-color: $menu-bg-color;
-  overflow: hidden;
+  top: calc(100vh + $mobile-header-height);
   z-index: 1;
+  width: 100%;
+  height: auto;
+  max-height: 0;
   margin: 0;
   padding: 0;
+  overflow: hidden;
+  background-color: $menu-bg-color;
   transition: max-height $menu-transition; //animation on height with height: (min/max/fit)-content or auto or similar "auto" values aren't working
 
   &.expanded {
@@ -138,15 +138,15 @@ Most of the code. Wrapping and constraining elements.
   }
 
   @media screen and (min-width: $phoneWidth) {
-    width: 15vw;
-    max-height: calc(100vh - $mobile-header-height);
     top: calc(
       100% + $desktop-overlay-offset
     ); //100% + right offset, so that it looks "simetric" vs the top right corner
     right: $desktop-overlay-offset;
     z-index: 1;
-    background: $mid;
+    width: 15vw;
+    max-height: calc(100vh - $mobile-header-height);
     overflow-x: hidden;
+    background: $mid;
   }
 
   ul {
@@ -161,26 +161,26 @@ Most of the code. Wrapping and constraining elements.
     line-height: 2;
 
     @media screen and (min-width: $phoneWidth) {
-      line-height: 1.2;
       margin: 0;
+      line-height: 1.2;
     }
   }
   a {
     margin-left: 5%;
     margin-right: 5%;
 
-    text-decoration: none;
     color: $header-color;
+    text-decoration: none;
 
     @media screen and (min-width: $phoneWidth) {
       display: block;
       //height: 100%;
       //width: 100%;
       margin: 0;
-      padding-left: 5%;
-      padding-right: 5%;
       padding-top: 10px;
       padding-bottom: 10px;
+      padding-left: 5%;
+      padding-right: 5%;
     }
 
     //&:active,
@@ -251,26 +251,26 @@ Most of the code. Wrapping and constraining elements.
     padding-right: 30%;
   }
 
-  &:nth-child(odd):not(:last-child) {
-    background-color: $bg-color;
-  }
   &:nth-child(even) {
     background-color: $bg-lighter-color;
+  }
+  &:nth-child(odd):not(:last-child) {
+    background-color: $bg-color;
   }
 
   /* Gradient backgrounds */
   /*
-  &:nth-child(odd):not(:last-child) {
-    background: linear-gradient(0deg, $bg-lighter-color 0%, $bg-color 10%);
-  }
   &:nth-child(even):not(:last-child) {
     background: linear-gradient(0deg, $bg-color 0%, $bg-lighter-color 10%);
   }
-  &:nth-child(odd):last-child {
-    background: linear-gradient(0deg, $footer-bg-color 0%, $bg-color 10%);
+  &:nth-child(odd):not(:last-child) {
+    background: linear-gradient(0deg, $bg-lighter-color 0%, $bg-color 10%);
   }
   &:nth-child(even):last-child {
     background: linear-gradient(0deg, $footer-bg-color 0%, $bg-lighter-color 10%);
+  }
+  &:nth-child(odd):last-child {
+    background: linear-gradient(0deg, $footer-bg-color 0%, $bg-color 10%);
   }
   */
 }
@@ -313,13 +313,13 @@ Most of the code. Wrapping and constraining elements.
 \*------------------------------------*/
 
 .social-media {
-  text-align: center;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   margin-top: 1rem;
+  text-align: center;
 
-  & > a {
+  .social-media-icon {
     margin-left: 0.5rem;
     margin-right: 0.5rem;
   }
