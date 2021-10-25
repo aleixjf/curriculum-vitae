@@ -254,7 +254,7 @@ Most of the code. Wrapping and constraining elements.
   &:nth-child(even) {
     background-color: $bg-lighter-color;
   }
-  &:nth-child(odd):not(:last-child) {
+  &:nth-child(odd) {
     background-color: $bg-color;
   }
 
