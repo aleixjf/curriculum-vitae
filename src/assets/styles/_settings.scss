@@ -9,11 +9,15 @@ Examples of global settings might be things like:
 
 /* stylelint-disable no-variable-declaration */
 
-// Fonts
-$title-font-family: "Georgia", "Times New Roman", serif;
-$base-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+// Font families
+$sans-serif-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
   "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
   "Segoe UI Symbol"; //sans-serif
+$serif-family: "Georgia", "Times New Roman", serif;
+
+// Fonts
+$title-font-family: $sans-serif-family;
+$base-font-family: $sans-serif-family;
 $base-font-size: 12px;
 $base-line-height: 1.5em;
 

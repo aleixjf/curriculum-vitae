@@ -34,8 +34,5 @@ This layer forms the point of the Triangle.
 }
 
 .no-transition {
-  -webkit-transition: none !important;
-  -moz-transition: none !important;
-  -o-transition: none !important;
-  transition: none !important;
+  transition: none;
 }

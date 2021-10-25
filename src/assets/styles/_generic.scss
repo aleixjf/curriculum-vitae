@@ -43,12 +43,7 @@ main {
 
 footer {
   margin-top: auto;
+  color: $footer-color;
   text-align: center;
   background-color: $footer-bg-color;
-  color: $footer-color;
-
-  p,
-  a {
-    color: $footer-color;
-  }
 }
