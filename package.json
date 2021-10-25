@@ -1,0 +1,56 @@
+{
+  "name": "curriculum-vitae",
+  "version": "1.0.0",
+  "private": true,
+  "description": "This is my resume! Feel free to reach me out!",
+  "scripts": {
+    "parcel:serve": "parcel src/index.html -p 8123 --target web --open",
+    "parcel:build": "parcel build src/index.html --target web --no-source-maps --no-cache",
+    "clean": "rimraf dist .cache .cache-loader .parcel-cache",
+    "dev": "npm-run-all clean parcel:serve",
+    "build": "npm-run-all clean stylelint parcel:build",
+    "test": "echo 'Everything is working as expected ✅\nStart working on your project by running \\033[1mnpm run dev\\033[0m'",
+    "stylelint": "stylelint src/**/*.scss"
+  },
+  "web": "dist/index.html",
+  "targets": {
+    "web": {
+      "context": "browser",
+      "publicUrl": "./",
+      "engines": {
+        "browsers": "last 2 versions, > 0.5%, not dead"
+      }
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aleixjf/curriculum-vitae.git"
+  },
+  "author": {
+    "name": "Aleix Jiménez",
+    "email": "aleixjf@gmail.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/uoc-advanced-html-css/uoc-boilerplate/issues"
+  },
+  "homepage": "https://github.com/aleixjf/curriculum-vitae#readme",
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.0.0",
+    "autoprefixer": "^10.2.3",
+    "npm-run-all": "^4.1.5",
+    "parcel": "^2.0.0",
+    "postcss-preset-env": "^6.7.0",
+    "rimraf": "^3.0.2",
+    "sharp": "^0.29.1",
+    "stylelint": "^13.13.1",
+    "stylelint-config-recommended-scss": "^4.3.0",
+    "stylelint-itcss": "^0.4.0",
+    "stylelint-order": "^4.1.0",
+    "stylelint-scss": "^3.21.0"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.4",
+    "smoothscroll-polyfill": "^0.4.4"
+  }
+}
