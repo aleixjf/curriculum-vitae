@@ -23,7 +23,16 @@ body {
   font-size: $base-font-size;
   line-height: $base-line-height;
   color: $text-color;
-  background-color: $bg-color;
+  //background-color: $bg-color;
+  /* This makes sure that when on top, and scrolling up,
+  or on bottom, and scrolling down, you see the same
+  color as the color in the top/bottom pixel of our web
+  */
+  background: linear-gradient(
+    0deg,
+    $landing-bg-top-color 10%,
+    $footer-bg-color 90%
+  );
 }
 
 /*
