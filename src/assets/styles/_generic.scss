@@ -26,14 +26,8 @@ body {
   background-color: $bg-color;
 }
 
-header {
-  position: sticky;
-  top: 0;
-  z-index: 1;
-  overflow: hidden;
-}
-
 /*
+//If there's an aside, this is useful!
 main {
   display: flex;
   flex-direction: row-reverse;
@@ -43,7 +37,5 @@ main {
 
 footer {
   margin-top: auto;
-  color: $footer-color;
-  text-align: center;
   background-color: $footer-bg-color;
 }

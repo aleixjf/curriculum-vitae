@@ -101,7 +101,7 @@ Most of the code. Wrapping and constraining elements.
   #MENU OVERLAY
 \*------------------------------------*/
 
-#menu {
+.navigation-menu {
   position: absolute;
   /*
   We can't use position: "sticky" because it moves
@@ -149,12 +149,12 @@ Most of the code. Wrapping and constraining elements.
     background: $mid;
   }
 
-  ul {
+  .links-list {
     margin: 0;
     padding: 0;
     list-style: none;
   }
-  li {
+  .links-list-element {
     margin-top: 1rem;
     margin-bottom: 1rem;
     font-size: 1.2rem;
@@ -165,7 +165,7 @@ Most of the code. Wrapping and constraining elements.
       line-height: 1.2;
     }
   }
-  a {
+  .section-link {
     margin-left: 5%;
     margin-right: 5%;
 
@@ -314,6 +314,7 @@ Most of the code. Wrapping and constraining elements.
 
 .copyright {
   color: $footer-color;
+  text-align: center;
 }
 
 .social-media {
