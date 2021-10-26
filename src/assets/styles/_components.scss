@@ -236,8 +236,8 @@ Most of the code. Wrapping and constraining elements.
 \*------------------------------------*/
 
 .cv-section {
-  padding-top: 25px;
-  padding-bottom: 25px;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
   padding-left: 5%;
   padding-right: 5%;
 
@@ -260,6 +260,9 @@ Most of the code. Wrapping and constraining elements.
 
   /* Gradient backgrounds */
   /*
+  padding-top: 25px;
+  padding-bottom: 25px;
+
   &:nth-child(even):not(:last-child) {
     background: linear-gradient(0deg, $bg-color 0%, $bg-lighter-color 10%);
   }
@@ -279,6 +282,19 @@ Most of the code. Wrapping and constraining elements.
   #Timeline Event
 \*------------------------------------*/
 
+.timeline-event {
+  .icon {
+    width: 1rem;
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 1.5rem;
+    @media screen and (min-width: $phoneWidth) {
+      margin-bottom: 1rem;
+    }
+  }
+}
+
 .timeline-title {
   margin-left: 0%;
 
@@ -289,16 +305,18 @@ Most of the code. Wrapping and constraining elements.
   */
 }
 
-.timeline-event-information {
-  justify-content: space-between;
-}
-
 .timeline-event-panel {
   width: 100%;
 
   @media screen and (min-width: $phoneWidth) {
-    width: 35%;
+    width: 40%;
   }
+
+  /*
+  .timeline-duration {
+    font-weight: 700;
+  }
+  */
 }
 .timeline-event-description {
   width: 100%;
@@ -324,7 +342,7 @@ Most of the code. Wrapping and constraining elements.
   margin-top: 1rem;
   text-align: center;
 
-  .social-media-icon {
+  .icon-wrapper {
     margin-left: 0.5rem;
     margin-right: 0.5rem;
     color: $footer-color;

@@ -24,7 +24,7 @@ from OOCSS.
   width: 100%;
 
   @media (min-width: $phoneWidth) {
-    width: 50%;
+    width: 45%;
   }
 }
 
@@ -34,6 +34,10 @@ from OOCSS.
   @media (min-width: $phoneWidth) {
     width: 33%;
   }
+}
+
+.multi-columns {
+  justify-content: space-between;
 }
 
 .centered {
