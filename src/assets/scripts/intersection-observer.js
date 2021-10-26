@@ -100,6 +100,15 @@ const intersectionCallback = (entries, observer) => {
     document.querySelectorAll(".fully-visible")[0]?.classList.add("active");
   }
 
+  //Prevent that When on bottom, gives another section the "active" class
+  if (
+    window.innerHeight + Math.ceil(window.scrollY) >=
+    document.body.offsetHeight
+  ) {
+    menu.querySelector(".active")?.classList.remove("active");
+    links[links.length - 1].classList.add("active");
+  }
+
   /*
   // Complex approach
 
@@ -191,7 +200,7 @@ window.addEventListener(
   "scroll",
   function () {
     if (
-      window.innerHeight + Math.ceil(window.pageYOffset) >=
+      window.innerHeight + Math.ceil(window.scrollY) >=
       document.body.offsetHeight
     ) {
       menu.querySelector(".active")?.classList.remove("active");

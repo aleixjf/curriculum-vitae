@@ -2,7 +2,7 @@
   "extends": "stylelint-config-recommended-scss",
   "plugins": ["stylelint-itcss", "stylelint-order"],
   "rules": {
-    "unit-allowed-list": ["em", "rem", "%", "px", "vw", "vh", "ms", "deg"],
+    "unit-allowed-list": ["em", "rem", "%", "px", "vw", "vh", "s", "ms", "deg"],
     "color-no-invalid-hex": true,
     "itcss/no-at-important":true,
     "itcss/no-variable-declaration": [
