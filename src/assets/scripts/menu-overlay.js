@@ -1,6 +1,3 @@
-/* Customizable setting */
-const headerOffset = 50; //in pixels
-
 /* Viewport dimensions */
 let vw = Math.max(
   document.documentElement.clientWidth || 0,
@@ -12,10 +9,13 @@ let vh = Math.max(
 );
 
 /* Select the HTML elements */
+let header = document.getElementsByTagName("header")[0];
 let menu = document.getElementById("menu");
 let icon = document.getElementById("menu-icon");
 let links = document.querySelectorAll("#menu a");
 let sections = document.querySelectorAll(".cv-section");
+let logo = document.getElementById("logo");
+let scrollIndicator = document.getElementById("scroll-indicator");
 
 function toggleMenu() {
   console.log("INFO: Click on menu icon registered");
@@ -74,75 +74,62 @@ function scrollSpy() {
   }
 }
 
-/*
-var smoothScroll = function (elementId) {
-  var MIN_PIXELS_PER_STEP = 16;
-  var MAX_SCROLL_STEPS = 30;
-  var target = document.getElementById(elementId);
-  var scrollContainer = target;
-  do {
-    scrollContainer = scrollContainer.parentNode;
-    if (!scrollContainer) return;
-    scrollContainer.scrollTop += 1;
-  } while (scrollContainer.scrollTop == 0);
+function scrollTop(e) {
+  e.preventDefault();
 
-  var targetY = 0;
-  do {
-    if (target == scrollContainer) break;
-    targetY += target.offsetTop;
-  } while ((target = target.offsetParent));
+  if (menu.classList.contains("expanded")) toggleMenu();
 
-  var pixelsPerStep = Math.max(
-    MIN_PIXELS_PER_STEP,
-    (targetY - scrollContainer.scrollTop) / MAX_SCROLL_STEPS
-  );
-
-  var stepFunc = function () {
-    scrollContainer.scrollTop = Math.min(
-      targetY,
-      pixelsPerStep + scrollContainer.scrollTop
-    );
-
-    if (scrollContainer.scrollTop >= targetY) {
-      return;
-    }
-
-    window.requestAnimationFrame(stepFunc);
-  };
-
-  window.requestAnimationFrame(stepFunc);
-};
-*/
-
-for (const link of links) {
-  link.addEventListener("click", clickHandler);
+  scroll({
+    top: 0,
+    behavior: "smooth",
+  });  
 }
 
-function clickHandler(e) {
+function scrollDown(e) {
+  console.log("Clicked, it should scroll")
   e.preventDefault();
+
+  const headerOffset = header.style.display == "none" ? header.offsetTop : header.offsetHeight;
+  const offsetTop = sections[0].offsetTop - headerOffset;
+
+  scroll({
+    top: offsetTop,
+    behavior: "smooth",
+  });  
+}
+
+function smoothScroll(e) {
+  e.preventDefault();
+  const headerOffset = header.style.display == "none" ? header.offsetTop : header.offsetHeight;
   const href = this.getAttribute("href");
   const offsetTop = document.querySelector(href).offsetTop - headerOffset;
+
+  if (header.style.display != "none") menu.classList.add("no-transition");
+  toggleMenu();
 
   scroll({
     top: offsetTop,
     behavior: "smooth",
   });
+  
+  menu.classList.remove("no-transition");
+  links.forEach((link) => link.classList.remove("active"));
+  this.classList.add("active");
 }
 
-/* Menu click events */
-links.forEach((link) => {
-  link.onclick = () => {
-    menu.classList.add("no-transition");
-    toggleMenu();
-    menu.classList.remove("no-transition");
-    setTimeout(() => {
-      links.forEach((a) => a.classList.remove("active"));
-      link.classList.add("active");
-    }, 250);
-  };
-});
+/* Click events */
 
-/* Window event listenners to trigger the functions */
+logo.addEventListener("click", scrollTop)
+scrollIndicator.addEventListener("click", scrollDown);
+//addEventListener("click", scrollDown)
+
+for (const link of links) {
+  link.addEventListener("click", smoothScroll);
+}
+
+
+/* Window events */
+
 window.addEventListener("scroll", function () {
   console.log("INFO: Scroll registered");
   //scrollspy() /* We will use the Intersection Observer API instead of Scrollspy */
