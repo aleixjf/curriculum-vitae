@@ -23,10 +23,10 @@ Most of the code. Wrapping and constraining elements.
   );
 
   .landing-center {
-    margin-top: 35vh;
+    margin-top: 30vh;
 
     @media screen and (min-width: $smallScreenWidth) and (max-height: 800px) {
-      margin-top: 20vh;
+      margin-top: 18vh;
     }
 
     .landing-name {
@@ -50,7 +50,7 @@ Most of the code. Wrapping and constraining elements.
   justify-content: center;
   width: $scroll-indicator-size*7;
   height: $scroll-indicator-size*8;
-  margin-bottom: 10vh;
+  margin-bottom: 18vh;
   margin-left: auto;
   margin-right: auto;
 }
