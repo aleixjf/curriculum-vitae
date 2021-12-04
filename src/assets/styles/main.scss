@@ -24,6 +24,35 @@ The only place where !important declarations will be accepted.The most explicit 
 This utilities/auxiliary classes have the capacity to override anything previously set on the triangle (on the points above here).
 */
 
+/*------------------------------------*\
+  #DEPENDENCIES
+\*------------------------------------*/
+
+/*** Bootstrap 5.1 ***/
+// Documentation: https://getbootstrap.com/docs/5.1/customize/sass/
+// Option A. All of Bootstrap
+@import "bootstrap-overrides";
+@import "~bootstrap/scss/bootstrap"; 
+@import "bootstrap-extra";
+// Option B. Parts of Bootstrap + Overrides
+// @import "bootstrap";
+
+
+/*** FontAwesome ***/
+// Documentation: https://fontawesome.com/v5.15/how-to-use/on-the-web/using-with/sass
+@import "npm:@fortawesome/fontawesome-free/css/all.css";
+/*
+// $fa-font-path: "~@fortawesome/fontawesome-free/webfonts";
+@import "~@fortawesome/fontawesome-free/scss/fontawesome";
+@import "~@fortawesome/fontawesome-free/scss/brands";
+@import "~@fortawesome/fontawesome-free/scss/regular";
+// @import '~@fortawesome/fontawesome-free/scss/<type>'; //Replace type with: brands, solid or regular
+*/
+
+/*------------------------------------*\
+  #ITCSS
+\*------------------------------------*/
+
 @import "settings";
 @import "tools";
 @import "generic";
@@ -31,12 +60,3 @@ This utilities/auxiliary classes have the capacity to override anything previous
 @import "objects";
 @import "components";
 @import "utilities";
-
-//Dependencies
-/*
-//$fa-font-path: "~@fortawesome/fontawesome-free/webfonts";
-@import "~@fortawesome/fontawesome-free/scss/fontawesome";
-@import "~@fortawesome/fontawesome-free/scss/brands";
-@import "~@fortawesome/fontawesome-free/scss/regular";
-//@import '~@fortawesome/fontawesome-free/scss/<type>'; //Replace type with: brands, solid or regular
-*/
