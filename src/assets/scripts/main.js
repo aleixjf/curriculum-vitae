@@ -5,15 +5,19 @@
  * import SomeModule from 'some-node-module';
  */
 
-//Fontawesome (the Sass approach not working?)
-import "@fortawesome/fontawesome-free/js/all.js";
+// Bootstrap
+// https://getbootstrap.com/docs/5.1/getting-started/parcel/#importing-javascript
+import * as bootstrap from 'bootstrap' //All components option
 
-//Polyfill
+// Fontawesome
+// We are importing it through main.scss, which is preferable.
+// import "@fortawesome/fontawesome-free/js/all.js";
+
+// Polyfill
 import smoothscroll from "smoothscroll-polyfill";
 smoothscroll.polyfill();
 
-//Welcome message on Console
+// Welcome message on Console
 (function () {
-  const university = "UOC";
-  console.log(`Hello, ${university}!`);
+  console.log(`Hello, visitor!`);
 })();
