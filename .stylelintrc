@@ -8,7 +8,7 @@
     "itcss/no-variable-declaration": [
       true,
       {
-        "ignoreLayers": ["settings"]
+        "ignoreLayers": ["1-settings", "bootstrap-overrides", "bootstrap-extra"]
       }
     ],
     "order/properties-order": [

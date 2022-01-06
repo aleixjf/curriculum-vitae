@@ -1,0 +1,106 @@
+/*
+1. SETTINGS:
+
+Examples of global settings might be things like:
+-font settings (base font size, family font)
+-colour palettes
+-config variables (for example --> $environment: dev)
+*/
+
+/* stylelint-disable no-variable-declaration */
+
+// Font families
+/*
+@font-face {
+  font-family: "Pragmatica";
+  src: url("../fonts/RaldoSemiboldJ.eot");
+  src: url("../fonts/RaldoSemiboldJ.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/RaldoSemiboldJ.woff2") format("woff2"),
+    url("../fonts/RaldoSemiboldJ.woff") format("woff"),
+    url("../fonts/RaldoSemiboldJ.ttf") format("truetype"),
+    url("../fonts/RaldoSemiboldJ.svg#RaldoSemiboldJ") format("svg");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+*/
+
+$sans-serif-family: "Pragmatica", -apple-system, BlinkMacSystemFont, "Segoe UI",
+  Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
+  "Segoe UI Emoji", "Segoe UI Symbol"; //sans-serif
+$serif-family: "Georgia", "Times New Roman", serif;
+
+// Fonts
+$title-font-family: $sans-serif-family;
+$base-font-family: $sans-serif-family;
+$base-font-size: 12px;
+$base-line-height: 1.5em;
+
+//Color Palettes
+/*
+INFO: Set in Bootstrap Overrides in order to be user there too
+$very-light: #eff3fb;
+$light: #cfdaf2;
+$mid: #7c9dde;
+$dark: #162750;
+$very-dark: #10162e; //CV en PDF: rgb(58, 82, 113)
+*/
+
+//Text Color
+$light-text: #eff3fb;
+$dark-text: $primary;
+
+$titles-color: $dark-text; //CV en PDF: rgb(58, 82, 113)
+$text-color: $dark-text;
+
+$landing-text: $light-text;
+$header-text: $light-text;
+$footer-text: $light-text;
+
+//Links Colors
+$links-color: $text-color; //$primary-text;
+$links-active-color: $text-color;
+$links-hover-color: $primary-light; //INFO: Angular material already adds a nice background to link buttons properly styled.
+
+//Background Colors
+$header-color: $primary; //#fff
+$footer-color: $primary; //#fff
+
+$menu-color: $header-color;
+$landing-top-color: $primary-dark; //Recommended: bg-color
+$landing-bottom-color: $primary; //Recommended: header-bg-color
+
+//Backgrounds
+$header-background: $header-color;
+$body-background: linear-gradient(
+  0deg,
+  $landing-top-color 10%,
+  $footer-color 90%
+);
+$footer-background: $footer-color;
+$landing-background: linear-gradient(
+  0deg,
+  $landing-bottom-color 5%,
+  $landing-top-color 60%
+);
+$menu-background: $header-color;
+
+//Media breaks (Max Desired width + 1)
+$phoneWidth: 481px;
+$tabletWidth: 769px;
+$smallScreenWidth: 1201px;
+$largeScreenWidth: 1921px;
+
+//Other settings
+//$fa-font-path: "~@fortawesome/fontawesome-free/webfonts";
+$scroll-indicator-size: 0.5rem;
+$mobile-header-height: 50px;
+$menu-transition: 600ms cubic-bezier(0.4, 0, 0.2, 1);
+$menu-overlay-margins: 4vw;
+
+/*
+Settings like $heading-size-1 should be defined in the
+Headings partial. This ensures this layer stays nice and slim,
+and means that most settings can be found alongside the code
+that uses them, making finding things far simpler.
+*/

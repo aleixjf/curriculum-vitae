@@ -16,11 +16,7 @@ Most of the code. Wrapping and constraining elements.
   justify-content: space-between;
   width: 100vw;
   height: 100vh;
-  background: linear-gradient(
-    0deg,
-    $landing-bg-bottom-color 5%,
-    $landing-bg-top-color 60%
-  );
+  background: $landing-background;
 
   .landing-center {
     margin-top: 30vh;
@@ -31,7 +27,7 @@ Most of the code. Wrapping and constraining elements.
 
     .landing-name {
       font-size: 8vw;
-      color: $landing-color;
+      color: $landing-text;
   
       @media screen and (min-width: $phoneWidth) {
         font-size: 6vw;
@@ -40,7 +36,7 @@ Most of the code. Wrapping and constraining elements.
   
     .landing-description {
       font-size: 2.5vw;
-      color: $landing-color;
+      color: $landing-text;
     }
   }
 }
@@ -78,7 +74,7 @@ Most of the code. Wrapping and constraining elements.
     width: 50%;
     height: 100%;
     content: '';
-    background: $landing-color;
+    background: $landing-text;
   }
  
   &:before {
@@ -129,11 +125,11 @@ Most of the code. Wrapping and constraining elements.
   padding-left: 5%;
   padding-right: 5%;
   overflow-x: hidden; /* Disable horizontal scroll */
-  background-color: $header-bg-color;
+  background-color: $header-color;
 
   .icon {
     width: $mobile-header-height * 0.7;
-    fill: $header-color;
+    fill: $header-text;
   }
 
   #menu-icon {
@@ -143,7 +139,7 @@ Most of the code. Wrapping and constraining elements.
     .menu-icon-line {
       fill: none;
       stroke-width: 3;
-      stroke: $header-color;
+      stroke: $header-text;
       transition: stroke-dasharray $menu-transition,
         stroke-dashoffset $menu-transition;
       }
@@ -194,7 +190,7 @@ Most of the code. Wrapping and constraining elements.
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: $menu-bg-color;
+  background-color: $menu-color;
   transition: max-height $menu-transition; //animation on height with height: (min/max/fit)-content or auto or similar "auto" values aren't working
 
   &.expanded {
@@ -219,7 +215,7 @@ Most of the code. Wrapping and constraining elements.
     width: 15vw;
     max-height: calc(100vh - $mobile-header-height);
     overflow-x: hidden;
-    background: $mid;
+    background: $primary-light;
   }
 
   .links-list {
@@ -242,7 +238,7 @@ Most of the code. Wrapping and constraining elements.
     margin-left: 5%;
     margin-right: 5%;
 
-    color: $header-color;
+    color: $header-text;
     text-decoration: none;
 
     @media screen and (min-width: $phoneWidth) {
@@ -254,15 +250,21 @@ Most of the code. Wrapping and constraining elements.
       padding-bottom: 10px;
       padding-left: 5%;
       padding-right: 5%;
+      color: $header-color;
     }
 
     //&:active,
     &.active {
-      font-weight: 700;
+      color: $primary-light;
 
       @media screen and (min-width: $phoneWidth) {
-        background-color: $dark;
+        color: $header-text;
+        background-color: $primary;
       }
+    }
+
+    &:hover {
+      color: $header-text;
     }
   }
 }
@@ -279,7 +281,7 @@ Most of the code. Wrapping and constraining elements.
   float: right;
   top: 4vw;
   right: 4vw;
-  background: $mid;
+  background: $primary-light;
   overflow-x: hidden;
   padding: 8px 0;
 
@@ -324,11 +326,11 @@ Most of the code. Wrapping and constraining elements.
     padding-right: 30%;
   }
 
-  &:nth-child(even) {
-    background-color: $bg-lighter-color;
-  }
   &:nth-child(odd) {
-    background-color: $bg-color;
+    background-color: lighten($primary-light, 20%);
+  }
+  &:nth-child(even) {
+    background-color: lighten($primary-light, 50%);
   }
 
   /* Gradient backgrounds */
@@ -349,10 +351,6 @@ Most of the code. Wrapping and constraining elements.
     background: linear-gradient(0deg, $footer-bg-color 0%, $bg-color 10%);
   }
   */
-}
-
-.icon {
-  width: 1em;
 }
 
 /*------------------------------------*\
@@ -398,7 +396,7 @@ Most of the code. Wrapping and constraining elements.
 }
 
 /*------------------------------------*\
-  #Certificates
+  #Languages
 \*------------------------------------*/
 
 .languages-table {
@@ -409,28 +407,32 @@ Most of the code. Wrapping and constraining elements.
   #Certificates
 \*------------------------------------*/
 
-/*
-.certificates:not(:first-child) {
-  margin-top: 10px;
-}
-*/
-
 .certificate-wrapper {
-  border: $primary solid 2px;
+  margin-left: 15%;
+  margin-right: 15%;
   padding: 3px;
+  border: $primary solid 2px;
+
+  @media screen and (min-width: $phoneWidth) {
+    margin: auto;
+  }
 
   &:not(:first-of-type) {
     margin-top: 10px;
   }
 
   .certificate {
-    border: $primary solid 1px;
     /* padding: 5px */
     padding-left: 0.5em;
     padding-right: 0.5em;
-
+    border: $primary solid 1px;
+    
     .certificate-name {
       font-weight: 700;
+    }
+
+    * {
+      text-align: center;
     }
   }
 
@@ -452,7 +454,7 @@ Most of the code. Wrapping and constraining elements.
 \*------------------------------------*/
 
 .copyright {
-  color: $footer-color;
+  color: $footer-text;
   text-align: center;
 }
 
@@ -467,7 +469,7 @@ Most of the code. Wrapping and constraining elements.
   .icon-wrapper {
     margin-left: 0.5rem;
     margin-right: 0.5rem;
-    color: $footer-color;
+    color: $footer-text;
   }
 }
 

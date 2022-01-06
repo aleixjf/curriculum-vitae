@@ -73,8 +73,16 @@ a {
   text-decoration: none;
 
   &:hover {
-    color: $mid;
+    color: $links-hover-color;
+    text-decoration: none;
   }
+
+  &:active,
+  &.active {
+    font-weight: 600;
+    color: $links-active-color;
+  }
+
   /*
   &:visited {
     color: mediumvioletred;

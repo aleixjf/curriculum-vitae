@@ -1,6 +1,12 @@
-// Option B: Include parts of Bootstrap
 // https://getbootstrap.com/docs/5.1/customize/sass/#importing
+//Option A. All of Bootstrap
+/*
+@import "bootstrap-overrides";
+@import "~bootstrap/scss/bootstrap"; 
+@import "bootstrap-extra";
+*/
 
+// Option B: Include parts of Bootstrap
 // 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
 @import "~bootstrap/scss/functions";
 
@@ -25,4 +31,4 @@
 @import "~bootstrap/scss/utilities/api";
 
 // 6. Additional code
-@import "bootstrap-extra";
+//@import "bootstrap-extra";
