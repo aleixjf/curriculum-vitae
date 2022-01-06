@@ -351,20 +351,18 @@ Most of the code. Wrapping and constraining elements.
   */
 }
 
+.icon {
+  width: 1em;
+}
+
 /*------------------------------------*\
   #Timeline Event
 \*------------------------------------*/
 
-.timeline-event {
-  .icon {
-    width: 1rem;
-  }
-
-  &:not(:last-child) {
-    margin-bottom: 1.5rem;
-    @media screen and (min-width: $phoneWidth) {
-      margin-bottom: 1rem;
-    }
+.timeline-event:not(:last-child) {
+  margin-bottom: 1.5rem;
+  @media screen and (min-width: $phoneWidth) {
+    margin-bottom: 1rem;
   }
 }
 
@@ -397,6 +395,56 @@ Most of the code. Wrapping and constraining elements.
   @media screen and (min-width: $phoneWidth) {
     width: 55%;
   }
+}
+
+/*------------------------------------*\
+  #Certificates
+\*------------------------------------*/
+
+.languages-table {
+  height: fit-content;
+}
+
+/*------------------------------------*\
+  #Certificates
+\*------------------------------------*/
+
+/*
+.certificates:not(:first-child) {
+  margin-top: 10px;
+}
+*/
+
+.certificate-wrapper {
+  border: $primary solid 2px;
+  padding: 3px;
+
+  &:not(:first-of-type) {
+    margin-top: 10px;
+  }
+
+  .certificate {
+    border: $primary solid 1px;
+    /* padding: 5px */
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+
+    .certificate-name {
+      font-weight: 700;
+    }
+  }
+
+  /*
+  p:first-of-type() {
+    margin-top: 0px;
+    padding-top: 0px;
+  }
+
+  p:last-of-type() {
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+  }
+  */
 }
 
 /*------------------------------------*\
