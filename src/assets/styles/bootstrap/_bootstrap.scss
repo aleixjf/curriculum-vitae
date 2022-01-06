@@ -19,6 +19,7 @@
 @import "~bootstrap/scss/root";
 
 // 4. Include any optional Bootstrap CSS as needed
+// NOTE: If the item isn't style as expected, it may be missing here!
 @import "~bootstrap/scss/utilities";
 @import "~bootstrap/scss/reboot";
 @import "~bootstrap/scss/type";
@@ -26,6 +27,7 @@
 @import "~bootstrap/scss/containers";
 @import "~bootstrap/scss/grid";
 @import "~bootstrap/scss/helpers";
+@import "~bootstrap/scss/tables";
 
 // 5. Optionally include utilities API last to generate classes based on the Sass map in `_utilities.scss`
 @import "~bootstrap/scss/utilities/api";
