@@ -27,8 +27,20 @@ This layer forms the point of the Triangle.
   }
 }
 
+.tablet-only {
+  @media screen and (min-width: $phoneWidth) and (max-width: $tabletWidth) {
+    display: none;
+  }
+}
+
 .desktop-only {
-  @media screen and (max-width: $phoneWidth) {
+  @media screen and (max-width: $tabletWidth) {
+    display: none;
+  }
+}
+
+.tablet-friendly {
+  @media screen and (min-width: $tabletWidth) {
     display: none;
   }
 }

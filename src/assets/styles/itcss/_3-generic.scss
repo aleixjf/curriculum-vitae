@@ -13,6 +13,10 @@ hence it being nice and wide in the Triangle model, and
 occurring very early on.
 */
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   display: flex;
   flex-direction: column;
@@ -27,11 +31,7 @@ body {
   or on bottom, and scrolling down, you see the same
   color as the color in the top/bottom pixel of our web
   */
-  background: linear-gradient(
-    0deg,
-    $landing-bg-top-color 10%,
-    $footer-bg-color 90%
-  );
+  background: $body-background
 }
 
 /*
@@ -46,5 +46,5 @@ main {
 footer {
   margin-top: auto;
   padding-bottom: 15px;
-  background-color: $footer-bg-color;
+  background: $footer-background;
 }

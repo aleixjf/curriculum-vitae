@@ -4,7 +4,7 @@
   "private": true,
   "description": "This is my resume! Feel free to reach me out!",
   "scripts": {
-    "parcel:serve": "parcel src/views/index.html -p 8123 --target web --open",
+    "parcel:serve": "parcel src/views/index.html -p 8123 --target web",
     "parcel:build": "parcel build src/views/index.html --target web --no-source-maps --no-cache",
     "clean": "rimraf dist .cache .cache-loader .parcel-cache",
     "dev": "npm-run-all clean parcel:serve",

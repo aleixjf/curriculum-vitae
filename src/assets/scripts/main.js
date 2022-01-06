@@ -9,6 +9,13 @@
 // https://getbootstrap.com/docs/5.1/getting-started/parcel/#importing-javascript
 import * as bootstrap from 'bootstrap' //All components option
 
+/*
+var scrollSpy = new bootstrap.ScrollSpy(document.body, {
+  target: '#menu',
+  method: 'auto'
+})
+*/
+
 // Fontawesome
 // We are importing it through main.scss, which is preferable.
 // import "@fortawesome/fontawesome-free/js/all.js";

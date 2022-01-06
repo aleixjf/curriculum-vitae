@@ -1,62 +1,16 @@
-/*
-1. SETTINGS: (Only used with CSS preprocessors)
-Global and brand variables --> Font, colors, definitions, etc. No CSS output.
+/******************************/
+/***** EXTERNAL LIBRARIES *****/
+/******************************/
 
-2. TOOLS:
-Mixins and global functions --> No CSS output.
+/* Bootstrap */
+@import "bootstrap/bootstrap";
 
-3. GENERIC:
-Ground Zero styles --> CSS Resets, normalizations, global box-sizing rules, etc.
+/* Font Awesome */
+@import "fontawesome/fontawesome";
 
-4. ELEMENTS:
-Customize and redefine the base HTML elements properties --> H1–H6 styles, ul (with no dots)
+/******************************/
+/*********** ITCSS ************/
+/******************************/
 
-5. OBJECTS:
-Cosmetic-free design patterns class selectors which define undecorated design patterns, like the media object from OOCSS.
-
-6. COMPONENTS:
-Designed components, chunks of UI
-For example: specific UI components.
-Most of the code goes here. Wrapping and constraining elements.
-
-7. UTILITIES:
-The only place where !important declarations will be accepted.The most explicit types of rules.
-This utilities/auxiliary classes have the capacity to override anything previously set on the triangle (on the points above here).
-*/
-
-/*------------------------------------*\
-  #DEPENDENCIES
-\*------------------------------------*/
-
-/*** Bootstrap 5.1 ***/
-// Documentation: https://getbootstrap.com/docs/5.1/customize/sass/
-// Option A. All of Bootstrap
-@import "bootstrap-overrides";
-@import "~bootstrap/scss/bootstrap"; 
-@import "bootstrap-extra";
-// Option B. Parts of Bootstrap + Overrides
-// @import "bootstrap";
-
-
-/*** FontAwesome ***/
-// Documentation: https://fontawesome.com/v5.15/how-to-use/on-the-web/using-with/sass
-@import "npm:@fortawesome/fontawesome-free/css/all.css";
-/*
-// $fa-font-path: "~@fortawesome/fontawesome-free/webfonts";
-@import "~@fortawesome/fontawesome-free/scss/fontawesome";
-@import "~@fortawesome/fontawesome-free/scss/brands";
-@import "~@fortawesome/fontawesome-free/scss/regular";
-// @import '~@fortawesome/fontawesome-free/scss/<type>'; //Replace type with: brands, solid or regular
-*/
-
-/*------------------------------------*\
-  #ITCSS
-\*------------------------------------*/
-
-@import "settings";
-@import "tools";
-@import "generic";
-@import "elements";
-@import "objects";
-@import "components";
-@import "utilities";
+// We load it after the external dependencies in order to override anything we want about them!
+@import "itcss/itcss";
