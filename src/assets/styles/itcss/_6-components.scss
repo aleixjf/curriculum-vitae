@@ -403,6 +403,33 @@ Most of the code. Wrapping and constraining elements.
   height: fit-content;
 }
 
+.languages-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border: $primary 2px solid;
+
+  .grid-header {
+    font-weight: 700;
+    color: $light-text;
+    background-color: $primary;
+  }
+
+  .grid-header,
+  .grid-cell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  //Inner Borders
+  .level {
+    border-left: $primary 1px solid;
+  }
+  .grid-cell:not(:nth-last-child(-n+2)) {
+    border-bottom: $primary 1px solid;
+  }
+}
+
 /*------------------------------------*\
   #Certificates
 \*------------------------------------*/
@@ -425,7 +452,7 @@ Most of the code. Wrapping and constraining elements.
     /* padding: 5px */
     padding-left: 0.5em;
     padding-right: 0.5em;
-    border: $primary solid 1px;
+    border: $primary double 2px;
     
     .certificate-name {
       font-weight: 700;
