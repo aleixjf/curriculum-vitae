@@ -26,6 +26,11 @@ h1 {
   font-family: $title-font-family;
   font-size: 4em;
   font-weight: bold;
+  text-align: center;
+
+  @media screen and (min-width: $phoneWidth) {
+    text-align: left;    
+  }
 }
 
 h2 {
@@ -34,6 +39,11 @@ h2 {
   font-family: $title-font-family;
   font-size: 2em;
   font-weight: bold;
+  text-align: center;
+
+  @media screen and (min-width: $phoneWidth) {
+    text-align: left;    
+  }
 }
 
 h3 {
