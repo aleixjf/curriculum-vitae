@@ -434,6 +434,16 @@ Most of the code. Wrapping and constraining elements.
   #Certificates
 \*------------------------------------*/
 
+.certificates {
+  margin-top: 1rem;
+  @media screen and (min-width: $phoneWidth) {
+    margin-top: 0;
+  }
+
+  h3 {
+    text-align: center;
+  }
+}
 .certificate-wrapper {
   margin-left: 15%;
   margin-right: 15%;
